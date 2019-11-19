@@ -75,12 +75,23 @@ WSGI_APPLICATION = 'alertapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ramzan_alert',
+#         'USER' : 'postgres',
+#         'PASSWORD' :'1234',
+#         'HOST' : 'localhost'
+
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ramzan_alert',
-        'USER' : 'postgres',
-        'PASSWORD' :'1234',
+        'USER' : 'frienddoouser',
+        'PASSWORD' :'GAL6615M13',
         'HOST' : 'localhost'
 
     }
