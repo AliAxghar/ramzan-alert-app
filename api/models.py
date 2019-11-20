@@ -42,9 +42,9 @@ class Quran(models.Model):
 
 class Eid(models.Model):
     reference = models.CharField(max_length=255)
-    arabic_hadees = models.TextField()
-    urdu_hadees = models.TextField()
-    english_hadees = models.TextField()
+    arabic_text = models.TextField(default="")  
+    urdu_text = models.TextField(default="")
+    english_text = models.TextField(default="")
 
     def __str__(self):
         return self.reference

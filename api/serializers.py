@@ -24,7 +24,7 @@ class QuranSerializer(serializers.HyperlinkedModelSerializer):
 class EidSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Eid
-        fields = ['id','reference','arabic_hadees', 'urdu_hadees', 'english_hadees']
+        fields = ['id','reference','arabic_text','urdu_text', 'english_text']
 
 
 class RamzanHadeesSerializer(serializers.HyperlinkedModelSerializer):
