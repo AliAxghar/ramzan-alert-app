@@ -23,6 +23,7 @@ class Hadees(models.Model):
 
 class Dua(models.Model):
     title = models.CharField(max_length=255)
+    reference = models.CharField(max_length=255)
     arabic_text = models.TextField()  
     urdu_text = models.TextField()
     english_text = models.TextField()
