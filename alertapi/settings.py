@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api'
+    'api',
+    'push_notifications'
 ]
 
 MIDDLEWARE = [
@@ -75,27 +76,27 @@ WSGI_APPLICATION = 'alertapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ramzan_alert',
-#         'USER' : 'postgres',
-#         'PASSWORD' :'1234',
-#         'HOST' : 'localhost'
-
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ramzan_alert',
-        'USER' : 'frienddoouser',
-        'PASSWORD' :'GAL6615M13',
+        'USER' : 'postgres',
+        'PASSWORD' :'1234',
         'HOST' : 'localhost'
 
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ramzan_alert',
+#         'USER' : 'frienddoouser',
+#         'PASSWORD' :'GAL6615M13',
+#         'HOST' : 'localhost'
+
+#     }
+# }
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES' :('rest_framework.permissions.IsAuthenticatedOrReadOnly',)
@@ -138,5 +139,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+
+PUSH_NOTIFICATIONS_SETTINGS = {
+        "FCM_API_KEY": "AAAAIVncGlA:APA91bEJk7-yy4p_YkHEKl48w0X4VAkRyf8DHu4Y8iy9KmJLhuksT4CYjo6_vuote-dxGWPgBL8LYW9It3hJUmvqm1ykRfVtANh4ldEwJNuWPM6h30KBwyj0PKiqgl7q1L1ABLt1pxN7",
+        "FCM_POST_URL": " https://fcm.googleapis.com/fcm/send",
+        "FCM_MAX_RECIPIENTS": 1000,
+        "DELETE_INACTIVE_DEVICES": False,
+        "ONE_DEVICE_PER_USER": True,
+
+}
