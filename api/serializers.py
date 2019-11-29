@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Dua,Ayat,Hadees,Quran,RamzanHadees,SehrHadees,IftarHadees,LailaTulQadarHadees,Eid
-
+from django.conf import settings
+from fcm_django.models import FCMDevice
+from django.db import models
 class AyatSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ayat
@@ -50,3 +52,11 @@ class LailaTulQadarHadeesSerializer(serializers.HyperlinkedModelSerializer):
         
         
 
+class FCMDeviceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FCMDevice
+        fields = ["id", "name", "registration_id", "device_id", "active","date_created", "type"]
+        
+        read_only_fields = ("date_created",)
+
+        extra_kwargs = {"active": {"default": True}}
