@@ -10,9 +10,9 @@ import time
 from time import sleep
 from ummalqura.hijri_date import HijriDate
 
-device = FCMDevice.objects.all().first()
-if date.today().weekday() == 4:
-    device.send_message("Ramzan Alert", "It is sunnat to fast today ")
+# device = FCMDevice.objects.all().first()
+# if date.today().weekday() == 4:
+#     device.send_message("Ramzan Alert", "It is sunnat to fast today ")
 
 # list  = []
 # for d in device:
@@ -136,8 +136,8 @@ class EidViewSet(viewsets.ModelViewSet):
     serializer_class = EidSerializer
 
 
-class FCMDeviceViewSet(viewsets.ModelViewSet):
+# class FCMDeviceViewSet(viewsets.ModelViewSet):
 
-    queryset = FCMDevice.objects.all().first()
-    serializer_class = FCMDeviceSerializer
+#     queryset = FCMDevice.objects.all().first()
+#     serializer_class = FCMDeviceSerializer
 
