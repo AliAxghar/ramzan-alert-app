@@ -13,7 +13,7 @@ router.register('ramzan-sehr',views.SehrHadeesViewSet)
 router.register('ramzan-iftar', views.IftarHadeesViewSet)
 router.register('ramzan-laila-tul-qadar', views.LailaTulQadarHadeesViewSet)
 router.register('eid', views.EidViewSet)
-# router.register('devices', FCMDeviceViewSet)
+router.register('devices', FCMDeviceViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
