@@ -63,15 +63,4 @@ def run(self):
                 devices.send_message("Ramzan Alert","you should not fast Friday alone, but in combination with Thursday or Saturday.")
             elif date.today().weekday() == 3 or date.today().weekday() == 0:
                 devices.send_message("Ramzan Alert","Aishah narrated:The Prophet used to try to fast on Mondays and Thursdays. [Tirmidhi, Nasai, and Ibn Majah].It is Sunnah to fast today")
-# class Ramzanalert(Thread):
-#     def run(self):
-#         while True:
-#         # devices = FCMdevices.objects.all().first()
-#         if date.today().weekday() == 0 or 3:
-#             # devices.send_message("Ramzan Alert", "It is sunnat to fast today")
-#             # time.sleep(2000)
-#             devices.send_message('fooo')
-#             sleep(10)
-# t1 = Ramzanalert()
-# t1.start()
-
+ 
