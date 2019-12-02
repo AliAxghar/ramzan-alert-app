@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'fcm_django',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -79,27 +80,27 @@ WSGI_APPLICATION = 'alertapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ramzan_alert',
-#         'USER' : 'postgres',
-#         'PASSWORD' :'1234',
-#         'HOST' : 'localhost'
-
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ramzan_alert',
-        'USER' : 'frienddoouser',
-        'PASSWORD' :'GAL6615M13',
+        'USER' : 'postgres',
+        'PASSWORD' :'1234',
         'HOST' : 'localhost'
 
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ramzan_alert',
+#         'USER' : 'frienddoouser',
+#         'PASSWORD' :'GAL6615M13',
+#         'HOST' : 'localhost'
+
+#     }
+# }
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES' :('rest_framework.permissions.IsAuthenticatedOrReadOnly',)
@@ -163,7 +164,12 @@ FCM_DJANGO_SETTINGS = {
         # "DELETE_INACTIVE_DEVICES": False,
         # "ONE_DEVICE_PER_USER": True,
 }
-
+CRONJOBS = [
+    ('*/2 * * * *', 'api.cron.run')
+]
+CRONJOBS = [
+    ('0 0 1 * *', 'api.cron.other_cron_job', ['pos_arg1', 'pos_arg2'], {'verbose': 'key_arg'}),
+]
 
 # FCM_DJANGO_SETTINGS = getattr(settings, "FCM_DJANGO_SETTINGS", {})
 
