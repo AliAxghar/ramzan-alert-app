@@ -165,7 +165,7 @@ FCM_DJANGO_SETTINGS = {
         # "ONE_DEVICE_PER_USER": True,
 }
 CRONJOBS = [
-    ('10 * * * *', 'api.cron.run')
+    ('15 * * * *', 'api.cron.run')
 ]
 
 # FCM_DJANGO_SETTINGS = getattr(settings, "FCM_DJANGO_SETTINGS", {})
