@@ -158,32 +158,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # }
 
 FCM_DJANGO_SETTINGS = {
-        "FCM_SERVER_KEY": "AAAAFcIN8dc:APA91bH9X-4GGfh-CLtG0Vqel3nIudkEv2qGMQG3dnAMxO4valyoFlzZFtM0f2vuZ4WshUQigra-yFvKVowfYtG8QmIpKu_RdySbW2tbtRim3hpJApAdg9MJstyc0lVkS2d4ngDua7St",
+        "FCM_SERVER_KEY": "AAAAFcIN8dc:APA91bHTpwD7cr2c4NK-haqi0TFffWznJNzZnR_VffT_VSNhaQDJBqNEFMd4bw1wITMOMWRSfKORYkQG95O6r_6XhvVxL-3RYxVRExrcBaVnbYpaOiOVHfkKXX_SDNmLELOzehOI7a7z",
         # "FCM_POST_URL": "https://fcm.googleapis.com/fcm/send",
         # "FCM_MAX_RECIPIENTS": 1000,
         # "DELETE_INACTIVE_DEVICES": False,
         # "ONE_DEVICE_PER_USER": True,
 }
 CRONJOBS = [
-    ('*/2 * * * *', 'api.cron.run')
+    ('*/2 * * *', 'api.cron.run')
 ]
 
-# FCM_DJANGO_SETTINGS = getattr(settings, "FCM_DJANGO_SETTINGS", {})
 
-# # FCM
-# FCM_DJANGO_SETTINGS.setdefault("APP_VERBOSE_NAME", _('FCM Django'))
-# FCM_DJANGO_SETTINGS.setdefault("FCM_SERVER", "https://fcm.googleapis.com/fcm/send")
-# FCM_DJANGO_SETTINGS.setdefault("FCM_SERVER_KEY", "AAAAIVncGlA:APA91bEJk7-yy4p_YkHEKl48w0X4VAkRyf8DHu4Y8iy9KmJLhuksT4CYjo6_vuote-dxGWPgBL8LYW9It3hJUmvqm1ykRfVtANh4ldEwJNuWPM6h30KBwyj0PKiqgl7q1L1ABLt1pxN7")
-# FCM_DJANGO_SETTINGS.setdefault("ONE_DEVICE_PER_USER", False)
-# FCM_DJANGO_SETTINGS.setdefault("DELETE_INACTIVE_DEVICES", False)
 
-# # User model
-# FCM_DJANGO_SETTINGS.setdefault("USER_MODEL", settings.AUTH_USER_MODEL)
-
-# FCM_DJANGO_SETTINGS.setdefault("ERRORS", {
-#     'invalid_registration': 'InvalidRegistration',
-#     'missing_registration': 'MissingRegistration',
-#     'not_registered': 'NotRegistered',
-#     'invalid_package_name': 'InvalidPackageName'
-# })
 

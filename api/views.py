@@ -17,7 +17,7 @@ class Ramzanalert():
     def run(self):
         devices = FCMDevice.objects.all()
         if date.today().weekday() == 1:
-            devices.send_message("Ramzan Alert", "2222222222222222")
+            devices.send_message("Ramzan Alert", "333333333333")
 
         um = HijriDate.today()
         if HijriDate.current_month()==12:
