@@ -16,9 +16,8 @@ from ummalqura.hijri_date import HijriDate
 class Ramzanalert():
     def run(self):
         devices = FCMDevice.objects.all()
-        if date.today().weekday() == 1:
-            devices.send_message("Ramzan Alert", "333333333333")
-
+        if date.today().weekday():
+            devices.send_message("Ramzan Alert", "Mukhtar b. Fulful said: I asked Anas b. Malik about the voluntary prayers after the afternoon prayer, and he replied: 'Umar struck hit hands on prayer observed after the 'Asr prayer and we used to observe two rak'ahs after the sun set before the evening prayer during the time of the Messenger of Allah ( ‌صلی ‌اللہ ‌علیہ ‌وسلم ‌ ). I said to him: Did the Messenger of Allah ( ‌صلی ‌اللہ ‌علیہ ‌وسلم ‌ ) observe them? He said: He saw us observing them, but he neither commanded us nor forbade us to do so.")
         um = HijriDate.today()
         if HijriDate.current_month()==12:
             if um.day-1 == 1:
