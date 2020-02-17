@@ -28,7 +28,7 @@ SECRET_KEY = '+zjjga&0_&6^dbvv(56&48)v9e5l2gll#3o=nsb+j*v(dz)-m8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://ralert.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'api',
     'fcm_django',
     'django_crontab',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,10 @@ DATABASES = {
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES' :('rest_framework.permissions.IsAuthenticatedOrReadOnly',)
 # }
+REST_FRAMEWORK = {
 
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -147,11 +151,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-) 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 

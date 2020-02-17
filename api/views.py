@@ -3,14 +3,12 @@ from rest_framework import viewsets
 from .models import Ayat,Hadees,Dua,RamzanHadees,SehrHadees,IftarHadees,LailaTulQadarHadees,Eid,Quran
 from .serializers import AyatSerializer,QuranSerializer,EidSerializer,RamzanHadeesSerializer,SehrHadeesSerializer,IftarHadeesSerializer,LailaTulQadarHadeesSerializer,HadeesSerializer,DuaSerializer,FCMDeviceSerializer
 from fcm_django.models import FCMDevice
-from fcm_django.models import FCMDevice
 from datetime import date
 from ummalqura.hijri import Umalqurra
-# from threading import *
 import time
 import datetime 
-from time import sleep
 from ummalqura.hijri_date import HijriDate
+import boto3
 
 
 class Ramzanalert():
@@ -72,8 +70,8 @@ class Ramzanalert():
                     devices.send_message("Ramzan Alert","you should not fast Friday alone, but in combination with Thursday or Saturday.")
                 elif date.today().weekday() == 3 or date.today().weekday() == 0:
                     devices.send_message("Ramzan Alert","Aishah narrated:The Prophet used to try to fast on Mondays and Thursdays. [Tirmidhi, Nasai, and Ibn Majah].It is Sunnah to fast today")
-r = Ramzanalert()
-r.run()
+obj = Ramzanalert()
+obj.run()
 
 class AyatViewSet(viewsets.ModelViewSet):
 
@@ -121,8 +119,41 @@ class EidViewSet(viewsets.ModelViewSet):
     serializer_class = EidSerializer
 
 
+
 # class FCMdevicesViewSet(viewsets.ModelViewSet):
 
 #     queryset = FCMdevices.objects.all().first()
 #     serializer_class = FCMdevicesSerializer
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def sendMessage():
+    # Create an SNS client
+    client = boto3.client(
+        "sns",
+        aws_access_key_id="AKIAIPRRJYYIR6FS2GDQ",
+        aws_secret_access_key="Tzv3tQyIWRrXy1KNxVbLaya4fMdcMMNIqnjt/mCb",
+        region_name="us-east-1"
+    )
+    # Send your sms message.
+    client.publish(
+        PhoneNumber="+923224277699",
+        Message="code"
+    )
