@@ -144,16 +144,3 @@ class EidViewSet(viewsets.ModelViewSet):
 
 
 
-def sendMessage():
-    # Create an SNS client
-    client = boto3.client(
-        "sns",
-        aws_access_key_id="AKIAIPRRJYYIR6FS2GDQ",
-        aws_secret_access_key="Tzv3tQyIWRrXy1KNxVbLaya4fMdcMMNIqnjt/mCb",
-        region_name="us-east-1"
-    )
-    # Send your sms message.
-    client.publish(
-        PhoneNumber="+923224277699",
-        Message="code"
-    )
