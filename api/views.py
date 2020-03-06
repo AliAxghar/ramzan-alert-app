@@ -8,7 +8,7 @@ from ummalqura.hijri import Umalqurra
 import time
 import datetime 
 from ummalqura.hijri_date import HijriDate
-import boto3
+
 
 
 class Ramzanalert():
