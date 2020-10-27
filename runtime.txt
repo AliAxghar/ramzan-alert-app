@@ -3,7 +3,7 @@ bangla==0.0.2
 certifi==2019.9.11
 cffi==1.13.2
 chardet==3.0.4
-cryptography==2.8
+cryptography==3.2
 Django==2.2.6
 django-crontab==0.7.1
 django-fcm==0.1.1
