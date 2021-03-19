@@ -9,7 +9,7 @@ django-crontab==0.7.1
 django-fcm==0.1.1
 django-push-notifications==1.6.1
 django-uuidfield==0.5.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 docopt==0.6.2
 fcm-django==0.3.2
 h2==2.6.2
