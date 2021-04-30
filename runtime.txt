@@ -41,5 +41,5 @@ six==1.13.0
 sqlparse==0.3.0
 umalqurra==0.2
 ummalqura==2.0.1
-urllib3==1.25.7
+urllib3==1.25.8
 yarg==0.1.9
