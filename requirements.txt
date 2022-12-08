@@ -1,6 +1,6 @@
 apns2==0.5.0
 bangla==0.0.2
-certifi==2019.9.11
+certifi==2022.12.7
 cffi==1.13.2
 chardet==3.0.4
 cryptography==2.8
